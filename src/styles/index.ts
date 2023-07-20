@@ -13,4 +13,18 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
+export const Container = styled.div`
+  display: block;
+  margin: 0 auto;
+  max-width: 767px;
+  width: 100%;
+`
+
+export const Titulo = styled.h1`
+  font-size: 24px;
+  text-align: center;
+  margin: 40px 0;
+  font-weight: bold;
+`
+
 export default GlobalStyle

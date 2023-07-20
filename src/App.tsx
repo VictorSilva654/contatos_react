@@ -1,11 +1,17 @@
-import GlobalStyle from './styles'
+import { Provider } from 'react-redux'
+import store from './store'
+import GlobalStyle, { Container, Titulo } from './styles'
+import Formulario from './containers/Formulario'
 
 function App() {
   return (
-    <>
+    <Provider store={store}>
       <GlobalStyle />
-      <h1>Oie</h1>
-    </>
+      <Container>
+        <Titulo>Cadastro de contatos</Titulo>
+        <Formulario />
+      </Container>
+    </Provider>
   )
 }
 
