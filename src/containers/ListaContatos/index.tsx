@@ -1,22 +1,22 @@
 import { useSelector } from 'react-redux'
 import { RootReducer } from '../../store'
+import ContatoComponente from '../../components/Contato'
 
 export const ListaContatos = () => {
   const { itens } = useSelector((state: RootReducer) => state.contato)
+
   return (
-    <table>
-      <tr>
-        <th>Nome</th>
-        <th>Telefone</th>
-        <th>Email</th>
-      </tr>
+    <ul>
       {itens.map((contato) => (
-        <tr key={contato.id}>
-          <td>{contato.nome}</td>
-          <td>{contato.telefone}</td>
-          <td>{contato.email}</td>
-        </tr>
+        <li key={contato.id}>
+          <ContatoComponente
+            id={contato.id}
+            nome={contato.nome}
+            telefone={contato.telefone}
+            email={contato.email}
+          />
+        </li>
       ))}
-    </table>
+    </ul>
   )
 }
