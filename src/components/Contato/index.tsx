@@ -1,8 +1,8 @@
 import { useDispatch } from 'react-redux'
+import { useState, useEffect } from 'react'
 import ContatoClass from '../../models/Contato'
 import { editar, remover } from '../../store/reducers/Contato'
 import * as Estilizado from '../../styles'
-import { useState } from 'react'
 
 type Props = ContatoClass
 
@@ -22,13 +22,13 @@ const Contato = ({
     <>
       <Estilizado.InputContato
         type="text"
-        value={nomeContato}
+        defaultValue={nomeContato}
         onChange={(e) => setNome(e.target.value)}
         disabled={!edicao}
       />
       <Estilizado.InputContato
         type="email"
-        value={emailContato}
+        defaultValue={emailContato}
         onChange={(e) => setEmail(e.target.value)}
         disabled={!edicao}
       />
@@ -36,7 +36,7 @@ const Contato = ({
         type="tel"
         disabled={!edicao}
         onChange={(e) => setTelefone(e.target.value)}
-        value={telefoneContato}
+        defaultValue={telefoneContato}
       />
       {edicao ? (
         <>
